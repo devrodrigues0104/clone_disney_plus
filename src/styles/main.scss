@@ -1,5 +1,62 @@
-$corPrincipal: #fd1717;
+@use "./reset.scss";
+@use "variaveis.scss";
+@use "hero.scss";
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: bold;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corPrimaria;
+}
+
+@mixin title($fontSize: 40px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corSecundaria;
+}
 
 body {
-    background-color: $corPrincipal;
+    background-color:  variaveis.$corDeFundo;
+    font-family: Avenir, sans-serif
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text();
+}
+
+.text--small {
+    @include text(12px)
+}
+
+.link-text {
+    @include text(18px);
+    color: variaveis.$corSecundaria;
+    text-decoration: underline;
+}
+
+.title--big {
+    @include title(44px)
+}
+
+.title {
+    @include title()
+}
+
+.title--small {
+    @include title(28px)
 }
